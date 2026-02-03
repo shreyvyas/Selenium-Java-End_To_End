@@ -1,3 +1,4 @@
 base\BaseTest.class
-tests\LoginTest.class
 tests\RegisterTest.class
+base\DriverFactory.class
+tests\LoginTest.class

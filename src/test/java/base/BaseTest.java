@@ -19,10 +19,12 @@ public class BaseTest {
 	@BeforeMethod
 	public void setup() {
 		
-		ChromeOptions option = new ChromeOptions();
-		option.addArguments("--start-maximized");
+//		ChromeOptions option = new ChromeOptions();
+//		option.addArguments("--start-maximized");
+//		
+//		driver = new ChromeDriver(option);
 		
-		driver = new ChromeDriver(option);
+		driver = DriverFactory.initDriver("chrome");
 		
 		driver.get("https://qtripdynamic-qa-frontend.vercel.app/");
 		
