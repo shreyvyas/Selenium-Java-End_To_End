@@ -2,3 +2,4 @@ base\BaseTest.class
 tests\RegisterTest.class
 base\DriverFactory.class
 tests\LoginTest.class
+base\ConfigReader.class

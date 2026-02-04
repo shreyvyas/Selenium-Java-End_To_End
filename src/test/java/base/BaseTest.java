@@ -1,10 +1,11 @@
 package base;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+//import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeOptions;
 //import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.BeforeClass;
@@ -17,19 +18,19 @@ public class BaseTest {
 	protected WebDriver driver;
 	
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws IOException {
 		
 //		ChromeOptions option = new ChromeOptions();
 //		option.addArguments("--start-maximized");
 //		
 //		driver = new ChromeDriver(option);
 		
-		driver = DriverFactory.initDriver("chrome");
+		driver = DriverFactory.initDriver(ConfigReader.getProperties("browser"));                    //as per this line we need to manually change the browser name
 		
-		driver.get("https://qtripdynamic-qa-frontend.vercel.app/");
+		driver.get(ConfigReader.getProperties("url"));
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
+		 
 	}
 	
 	@AfterMethod
