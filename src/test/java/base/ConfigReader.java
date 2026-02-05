@@ -13,6 +13,10 @@ public class ConfigReader {
 		
 		String env = System.getProperty("env");
 		
+	    if(env == null) {
+	        env = "QA";   // default
+	    }
+		
 		try {
 			
 			FileInputStream file = new FileInputStream("C:\\Users\\admin\\eclipse-workspace\\selenium-java-E2E\\Resources\\Properties\\" + env + "Config.properties");

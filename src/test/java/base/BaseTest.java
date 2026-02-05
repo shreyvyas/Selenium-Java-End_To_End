@@ -25,7 +25,9 @@ public class BaseTest {
 //		
 //		driver = new ChromeDriver(option);
 		
-		driver = DriverFactory.initDriver(ConfigReader.getProperties("browser"));                    //as per this line we need to manually change the browser name
+		//as per this line we need to manually change the browser name
+		
+		driver = DriverFactory.initDriver(ConfigReader.getProperties("browser"));                    
 		
 		driver.get(ConfigReader.getProperties("url"));
 		
